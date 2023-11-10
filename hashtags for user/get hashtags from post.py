@@ -3,12 +3,13 @@ import os
 
 
 user = "113231132311323113231132311323" #User ID
-if os.path(f"hashtags {user}.csv"):
+userFile = f"hashtags {user}.csv"
+if os.path(userFile):
     pass
 else:
-    f = open(f"hashtags {user}.csv", "w")
+    f = open(userFile)
     f.write("hashtag,post with hashtag viewed,time,liked,disliked,comments,own post with hashtag,overall score")
-df = pandas.read_csv(f"hashtags {user}.csv", index_col="hashtag")
+df = pandas.read_csv(userFile, index_col="hashtag")
 
 hashtags1 = [] #definiert die Liste hashtag1
 check = "#" #da durch wir jeder hastag erkannt
