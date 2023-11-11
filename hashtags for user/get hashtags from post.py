@@ -5,7 +5,7 @@ from pandas import *
 
 
 user = "113231132311323113231132311323" #User ID TODO: must be changed when I add the apis to the code 
-userFile = "hashtags " + user + ".csv"
+userFile = ".\hashtags " + user + ".csv"
 if os.path.isfile(userFile):
     pass
 else:
