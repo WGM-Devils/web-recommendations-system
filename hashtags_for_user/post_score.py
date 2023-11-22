@@ -113,7 +113,7 @@ else:
 
 print(df_post)
 
-
+df_post.to_csv(postScoreFile)
 
 
 """
