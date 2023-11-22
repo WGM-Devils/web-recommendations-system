@@ -1,3 +1,4 @@
+from turtle import pos
 import pandas as pd
 import os.path
 from pandas import *
@@ -96,7 +97,7 @@ print(f'der Post Score durch die Anzahl der Hashtags ist: {post_score / c}')
 
 if post in df_post.index.to_list():
     print(post 'is in csv')
-    pass
+    df_post.at[post,"score"] = post_score / c
 else:
     print(post 'is not in csv')
     new_row = {post:[False,post_score / c]}
