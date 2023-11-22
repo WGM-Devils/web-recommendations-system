@@ -17,7 +17,7 @@ else:
     exit()
 
 if len(sys.argv[2]) == 30:
-    post = str(sys.argv[2]) #Post ID must be changed when I add the apis to the code
+    post_id = str(sys.argv[2]) #Post ID must be changed when I add the apis to the code
 else:
     print("Post ID is not valid")
     exit()
@@ -95,12 +95,12 @@ for hashtag in hashtags2:
 print(f'der Post Score ist: {post_score}')
 print(f'der Post Score durch die Anzahl der Hashtags ist: {post_score / c}')
 
-if post in df_post.index.to_list():
-    print(post 'is in csv')
-    df_post.at[post,"score"] = post_score / c
+if post_id in df_post.index.to_list():
+    print(post_id, 'is in csv')
+    df_post.at[post_id,"score"] = post_score / c
 else:
-    print(post 'is not in csv')
-    new_row = {post:[False,post_score / c]}
+    print(post_id, 'is not in csv')
+    new_row = {post_id:[False,post_score / c]}
     df_new_row = pd.DataFrame.from_dict(data=new_row,
                                         orient='index',
                                         columns=[
