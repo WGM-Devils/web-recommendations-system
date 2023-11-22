@@ -89,7 +89,7 @@ for hashtag in hashtags2:
         post_score = post_score + 100
         
     c = c + 1
-    
+
 print(f'der Post Score ist: {post_score}')
 print(f'der Post Score durch die Anzahl der Hashtags ist: {post_score / c}')
 
