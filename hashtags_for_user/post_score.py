@@ -5,12 +5,20 @@ import sys
 
 n = len(sys.argv)
 
-
+if n != 3:
+    print("Please enter a valid User ID and Post ID")
+    exit()
 
 if len(sys.argv[1]) == 30:
     user = str(sys.argv[1]) #User ID must be changed when I add the apis to the code 
 else:
     print("User ID is not valid")
+    exit()
+
+if len(sys.argv[2]) == 30:
+    post = str(sys.argv[2]) #Post ID must be changed when I add the apis to the code
+else:
+    print("Post ID is not valid")
     exit()
 
 userFile =  "hashtags-" + user + "-.csv"
