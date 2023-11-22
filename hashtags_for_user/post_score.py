@@ -1,3 +1,4 @@
+from hmac import new
 import pandas as pd
 import os.path
 from pandas import *
@@ -40,6 +41,7 @@ else:
     f.close()
 
 df = pd.read_csv(userFile, index_col=0, sep=",")
+df_post = pd.read_csv(postScoreFile, index_col=0, sep=",")
 
 hashtags1 = [] #definiert die Liste hashtag1
 hashtags2 = []
@@ -93,7 +95,23 @@ for hashtag in hashtags2:
 print(f'der Post Score ist: {post_score}')
 print(f'der Post Score durch die Anzahl der Hashtags ist: {post_score / c}')
 
+if post in df_post.index.to_list():
+    print(post 'is in csv')
+    pass
+else:
+    print(post 'is not in csv')
+    new_row = {post:[False,post_score / c]}
+    df_new_row = pd.DataFrame.from_dict(data=new_row,
+                                        orient='index',
+                                        columns=[
+                                            "viewed",
+                                            "score"
+                                        ])
+    print(new_row)
+    print(df_new_row)
+    df_post = pd.concat([df_post, df_new_row])
 
+print(df_post)
 
 
 
