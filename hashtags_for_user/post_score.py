@@ -1,4 +1,3 @@
-from turtle import pos
 import pandas as pd
 import os.path
 from pandas import *
