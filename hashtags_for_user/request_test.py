@@ -23,3 +23,9 @@ for post in posts["posts"]:
     posts_with_ids.append(full_post)
 
 print(posts_with_ids)
+
+print()
+
+uri2 = "https://hallo.klingt-gut.repl.co/api/users/get"
+
+print(requests.get(uri2, headers={"Authorization": "KlingtGut"}).json())
