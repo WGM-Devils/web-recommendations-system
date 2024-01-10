@@ -1,29 +1,50 @@
+import re
 import requests
 import pandas as pd
-
-#uri = "https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/api/posts/all"
+'''
+uri = "https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/posts/all"
 
 
 posts = requests.get(uri, headers={"Authorization": "KlingtGut"}).json()
 
 print(posts)
-
+print()
 n = 0
 
 posts_with_ids = []
 
+posts = posts["response"]
+print(posts)
+print()
+
+posts = posts["contents"]
+
 for post in posts["posts"]:
     print(post)
+    print()
     n += 1
-    
-    post_id = post["id"]
-    print(post_id)
-    
-    full_post = {post_id: post}
-    
-    posts_with_ids.append(full_post)
+'''
 
-print(posts_with_ids)
+
+uri = "https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/posts/get/id=659ea34d10f8e1ccfa27ed8f/type=json"
+
+responds_answer = requests.get(uri, headers={"Authorization": "KlingtGut"})
+
+print(responds_answer)
+print()
+print(responds_answer.json())
+print()
+
+responds_answer = responds_answer.json()
+
+responds_answer = responds_answer["response"]
+responds_answer = responds_answer["contents"]
+responds_answer_content = responds_answer["content"]
+responds_answer_title = responds_answer["title"]
+
+print(responds_answer_content)
+print()
+print(responds_answer_title)
 
 '''
 
