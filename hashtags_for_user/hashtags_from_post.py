@@ -15,6 +15,13 @@ n = len(sys.argv)
 
 if len(sys.argv[1]) == 30:
     user = str(sys.argv[1]) #User ID TODO: neat to add a check if the id is valid 
+    user_check_uri = "https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/users/get/id={user}/type=json"
+    response_check = requests.get(url=user_check_uri, headers={"Authorization": "KlingtGut"})
+    if response_check.status_code == 200:
+        pass
+    else:
+        print("User ID is not valid")
+        exit()
 else:
     print("User ID is not valid")
     exit()

@@ -1,7 +1,8 @@
 import requests
 import pandas as pd
 
-uri = "https://hallo.klingt-gut.repl.co/api/posts/all"
+#uri = "https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/api/posts/all"
+
 
 posts = requests.get(uri, headers={"Authorization": "KlingtGut"}).json()
 
@@ -24,8 +25,18 @@ for post in posts["posts"]:
 
 print(posts_with_ids)
 
-print()
+'''
 
-uri2 = "https://hallo.klingt-gut.repl.co/api/users/get"
+uri2 = "https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/users/get/id=65846334e4aa365544dd06af/type=json"
 
-print(requests.get(uri2, headers={"Authorization": "KlingtGut"}).json())
+response_uri2 = requests.get(uri2, headers={"Authorization": "KlingtGut"})
+
+print(response_uri2)
+
+if response_uri2.status_code == 200:
+    print("200")
+    print(response_uri2.json())
+else:
+    print("404")
+
+'''
