@@ -112,7 +112,9 @@ try:
 
     print(f'der Post Score ist: {post_score}')
     if c == 0:
+        print("there are no hashtags in this post")
         exit()
+    
     print(f'der Post Score durch die Anzahl der Hashtags ist: {post_score / c}')
 
     if post_id in df_post.index.to_list():
