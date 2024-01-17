@@ -29,8 +29,10 @@ try:
     else:
         print("User ID is not valid")
         exit()
-
+    
+    postScoreFile = "post-scores-" + user + "-.csv"
     userFile =  "hashtags-" + user + "-.csv"
+    
     if os.path.isfile(userFile):
         pass
     else:
@@ -39,7 +41,17 @@ try:
         f.write("\ntest,0,0,0,0,0")
         f.close()
 
+    if os.path.isfile(postScoreFile):
+        pass
+    else:
+        f = open(postScoreFile, "w")
+        f.write("post,viewed,score")
+        f.write("\n0,False,0")
+        f.close()
+    
     df = pd.read_csv(userFile, index_col=0, sep=",")
+    df_post = pd.read_csv(postScoreFile, index_col=0, sep=",")
+    
 
     # check if post id is valid and get post content
     if len(sys.argv[2]) == 24:
@@ -51,6 +63,8 @@ try:
             response_post_check = response_post_check["response"]
             response_post_check = response_post_check["contents"]
             post = response_post_check["content"]
+            if post_id in df_post.index.to_list():
+                df_post.at[post_id,"viewed"] = True
         else:
             print("Post ID is not valid")
             exit()
