@@ -46,8 +46,8 @@ try:
         pass
     else:
         f = open(userFile, "w")
-        f.write("hashtag,viewed,time,liked,disliked,comments,posted,score")
-        f.write("\ntest,1,1,1,1,1,1,1")
+        f.write("hashtag,viewed,liked,disliked,comments,posted,score")
+        f.write("\ntest,1,1,1,1,1,1")
         f.close
 
     if os.path.isfile(postScoreFile):
