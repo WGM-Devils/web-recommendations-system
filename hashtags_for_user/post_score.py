@@ -140,5 +140,5 @@ except KeyboardInterrupt:
     print("KeyboardInterrupt has been caught.")
     exit()
 except:
-    print("An error has occured.")
+    print("An error has occurred.")
     exit()
