@@ -11,12 +11,13 @@ import requests
 
 n = len(sys.argv)
 
+print(sys.argv[1])
 
-
-if len(sys.argv[1]) == 30:
+if len(sys.argv[1]) == 24:
     user = str(sys.argv[1]) #User ID TODO: neat to add a check if the id is valid 
-    user_check_uri = "https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/users/get/id={user}/type=json"
+    user_check_uri = f"https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/users/get/id={user}/type=json"
     response_check = requests.get(url=user_check_uri, headers={"Authorization": "KlingtGut"})
+    print(response_check.json())
     if response_check.status_code == 200:
         pass
     else:
