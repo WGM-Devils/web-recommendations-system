@@ -2,6 +2,7 @@ import pandas as pd
 import os.path
 from pandas import *
 import sys
+import requests
 
 n = len(sys.argv)
 
@@ -9,14 +10,32 @@ if n != 3:
     print("Please enter a valid User ID and Post ID")
     exit()
 
-if len(sys.argv[1]) == 30:
-    user = str(sys.argv[1]) #User ID must be changed when I add the apis to the code 
+if len(sys.argv[1]) == 24:
+    user = str(sys.argv[1])
+    user_check_uri = f"https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/users/get/id={user}/type=json"
+    response_user_check = requests.get(url=user_check_uri, headers={"Authorization": "KlingtGut"})
+    print(response_user_check.json())
+    if response_user_check.status_code == 200:
+        pass
+    else:
+        print("User ID is not valid")
+        exit()
 else:
     print("User ID is not valid")
     exit()
 
-if len(sys.argv[2]) == 30:
-    post_id = str(sys.argv[2]) #Post ID must be changed when I add the apis to the code
+if len(sys.argv[2]) == 24:
+    post_id = str(sys.argv[2])
+    post_id_check_uri = f"https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/posts/get/id={post_id}/type=json"
+    response_post_check = requests.get(url=post_id_check_uri, headers={"Authorization": "KlingtGut"})
+    if response_post_check.status_code == 200:
+        response_post_check = response_post_check.json()
+        response_post_check = response_post_check["response"]
+        response_post_check = response_post_check["contents"]
+        post = response_post_check["content"]
+    else:
+        print("Post ID is not valid")
+        exit()
 else:
     print("Post ID is not valid")
     exit()
@@ -48,7 +67,7 @@ check = "#" #da durch wir jeder hashtag erkannt
 splitPostSubSentences = []
 post_score = 0
 c = 0
-post = "Dies ist ein #Test Post für #Python. So das ist, der zweite, Satz ich nutze #VS-Code um zu #programmieren." #Post von dem man den Hashtag haben will TODO: must be changed when I add the apis to the code 
+#post = "Dies ist ein #Test Post für #Python. So das ist, der zweite, Satz ich nutze #VS-Code um zu #programmieren." #Post von dem man den Hashtag haben will TODO: must be changed when I add the apis to the code 
 print(post) #druckt Post in Terminal nur zum debuggen
 
 postDot = post.rfind(".") #Findet vom hintersten Punkt im Post die Position
@@ -92,6 +111,8 @@ for hashtag in hashtags2:
     c = c + 1
 
 print(f'der Post Score ist: {post_score}')
+if c == 0:
+    exit()
 print(f'der Post Score durch die Anzahl der Hashtags ist: {post_score / c}')
 
 if post_id in df_post.index.to_list():

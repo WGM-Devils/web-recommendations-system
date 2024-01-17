@@ -11,7 +11,9 @@ import requests
 
 n = len(sys.argv)
 
-print(sys.argv[1])
+if n != 3:
+    print("Please enter a valid User ID and Post ID")
+    exit()
 
 if len(sys.argv[1]) == 24:
     user = str(sys.argv[1])
