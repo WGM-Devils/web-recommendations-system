@@ -64,7 +64,11 @@ try:
             response_post_check = response_post_check["contents"]
             post = response_post_check["content"]
             if post_id in df_post.index.to_list():
-                df_post.at[post_id,"viewed"] = True
+                if df_post.at[post_id,"viewed"] == True:
+                    print("Post has already been viewed")
+                    exit()
+                else:
+                    df_post.at[post_id,"viewed"] = True
         else:
             print("Post ID is not valid")
             exit()
