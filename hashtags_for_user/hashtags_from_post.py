@@ -35,8 +35,8 @@ try:
         pass
     else:
         f = open(userFile, "w")
-        f.write("hashtag,viewed,liked,disliked,comments,posted,score")
-        f.write("\ntest,0,0,0,0,0,0")
+        f.write("hashtag,viewed,liked,comments,posted,score")
+        f.write("\ntest,0,0,0,0,0")
         f.close()
 
     df = pd.read_csv(userFile, index_col=0, sep=",")
@@ -65,7 +65,6 @@ try:
     print(post) #druckt Post in Terminal nur zum debuggen
 
     like = False
-    dislike = False
     comment = False
 
     postDot = post.rfind(".") #Findet vom hintersten Punkt im Post die Position
@@ -106,25 +105,22 @@ try:
             print(like)
             if like == 1:
                 df.at[hashtag,"liked"] = df.at[hashtag,"liked"] + 1
-            else:
-                df.at[hashtag,"disliked"] = df.at[hashtag,"disliked"] + 1
 
             if random.randrange(0,4) == 3:
                 df.at[hashtag,"comments"] = df.at[hashtag,"comments"] + 1
             elif random.randrange(0,3) == 2:
                 df.at[hashtag,"posted"] = df.at[hashtag,"posted"] + 1
                 
-            df.at[hashtag,"score"] = df.at[hashtag,"viewed"] + 10 * (df.at[hashtag,"liked"] - df.at[hashtag,"disliked"]) + 5 * df.at[hashtag,"comments"] + 10 * df.at[hashtag,"posted"]
+            df.at[hashtag,"score"] = df.at[hashtag,"viewed"] + 10 * df.at[hashtag,"liked"] + 5 * df.at[hashtag,"comments"] + 10 * df.at[hashtag,"posted"]
         else:
             print(hashtag, " is not in csv")
 
-            new_row = {hashtag:[1,0,0,0,0,1+10*(1-0)+5*1+10*0]} #TODO: must be changed when I add the apis to the code 
+            new_row = {hashtag:[1,0,0,0,0,1+10*0+5*0+10*0]} #TODO: must be changed when I add the apis to the code 
             df_new_row = pd.DataFrame.from_dict(data=new_row,
                                                 orient='index',
                                                 columns=[
                                                     "viewed",
                                                     "liked",
-                                                    "disliked",
                                                     "comments",
                                                     "posted",
                                                     "score"
