@@ -24,14 +24,15 @@ for post in posts["posts"]:
     print()
     n += 1
 '''
-uri = "https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/users/all/type=json"
+
+'''uri = "https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/users/all/type=json"
 
 responds_answer = requests.get(uri, headers={"Authorization": "KlingtGut"})
 
-print(responds_answer.json())
+print(responds_answer.json())'''
 
 
-'''
+
 uri = "https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/posts/get/id=659ea34d10f8e1ccfa27ed8f/type=json"
 
 responds_answer = requests.get(uri, headers={"Authorization": "KlingtGut"})
@@ -51,7 +52,7 @@ responds_answer_title = responds_answer["title"]
 print(responds_answer_content)
 print()
 print(responds_answer_title)
-'''
+
 '''
 
 uri2 = "https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/users/get/id=65846334e4aa365544dd06af/type=json"
