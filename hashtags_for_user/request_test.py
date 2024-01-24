@@ -1,4 +1,4 @@
-import 
+import .base_info as bi
 import requests
 import pandas as pd
 '''
