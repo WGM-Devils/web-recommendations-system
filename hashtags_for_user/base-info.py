@@ -1,2 +1,2 @@
 def baseuri():
-    return ''
+    return 'https://klingt-gut.cyclic.app/api'
