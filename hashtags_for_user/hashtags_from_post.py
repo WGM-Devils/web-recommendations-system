@@ -116,6 +116,13 @@ try:
         hashtags2.append(hashtag.lower())
 
     print(df)
+    
+    # turn all hashtags to lowercase
+    hashtags1 = hashtags2
+    hashtags2 = []
+    for hashtag in hashtags1:
+        print(hashtag.lower())
+        hashtags2.append(hashtag.lower())
 
     for hashtag in hashtags2:
         if hashtag in df.index.to_list():

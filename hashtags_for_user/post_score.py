@@ -3,16 +3,19 @@ import os.path
 from pandas import *
 import sys
 import requests
+import base_info as bi
 
 n = len(sys.argv)
 try:
     if n != 3:
         print("Please enter a valid User ID and Post ID")
         exit()
+    
+    uribase = bi.baseuri()
 
     if len(sys.argv[1]) == 24:
         user = str(sys.argv[1])
-        user_check_uri = f"https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/users/get/id={user}/type=json"
+        user_check_uri = uribase + f"/users/get/id={user}/type=json"
         response_user_check = requests.get(url=user_check_uri, headers={"Authorization": "KlingtGut"})
         print(response_user_check.json())
         if response_user_check.status_code == 200:
@@ -26,7 +29,7 @@ try:
 
     if len(sys.argv[2]) == 24:
         post_id = str(sys.argv[2])
-        post_id_check_uri = f"https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/posts/get/id={post_id}/type=json"
+        post_id_check_uri = uribase + f"/posts/get/id={post_id}/type=json"
         response_post_check = requests.get(url=post_id_check_uri, headers={"Authorization": "KlingtGut"})
         if response_post_check.status_code == 200:
             response_post_check = response_post_check.json()
