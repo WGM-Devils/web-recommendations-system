@@ -37,7 +37,7 @@ print("----------------------------------------")
 print()
 
 
-
+'''
 uri = uribase + "/posts/get/id=659ea34d10f8e1ccfa27ed8f/type=json"
 
 responds_answer = requests.get(uri, headers={"Authorization": "KlingtGut"})
@@ -57,6 +57,30 @@ responds_answer_title = responds_answer["title"]
 print(responds_answer_content)
 print()
 print(responds_answer_title)
+
+print()
+print("----------------------------------------")
+print()
+'''
+uri = uribase + "/users/get/id=65846334e4aa365544dd06af/type=json"
+responds_answer = requests.get(uri, headers={"Authorization": "KlingtGut"})
+print(responds_answer)
+print()
+print(responds_answer.json())
+print()
+responds_answer = responds_answer.json()
+
+responds_answer = responds_answer["response"]
+responds_answer = responds_answer["contents"]
+responds_answer = responds_answer["likes"]
+responds_answer = responds_answer["collection"]
+post_ids = []
+for i in responds_answer:
+    post_id = i["id"]
+    post_ids.append(post_id)
+print(responds_answer)
+print()
+print(post_ids)
 
 '''
 

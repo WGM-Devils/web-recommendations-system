@@ -85,7 +85,27 @@ try:
     splitPostSubSentences = []
     print(post) #druckt Post in Terminal nur zum debuggen
 
-    like = False
+    uri_like = uribase + f"/users/get/id={user}/type=json"
+    like_responds = requests.get(uri_like, headers={"Authorization": "KlingtGut"})
+    if like_responds.status_code == 200:
+        like_responds = like_responds.json()
+
+        like_responds = like_responds["response"]
+        like_responds = like_responds["contents"]
+        like_responds = like_responds["likes"]
+        like_responds = like_responds["collection"]
+        like_ids = []
+        for i in like_responds:
+            like_id = i["id"]
+            like_ids.append(like_id)
+        for i in like_ids:
+            if i == post_id:
+                like = True
+                break
+            else:
+                like = False
+    else:
+        like = False
     comment = False
 
     postDot = post.rfind(".") #Findet vom hintersten Punkt im Post die Position
@@ -129,9 +149,8 @@ try:
             print(hashtag, " is in csv")
             df.at[hashtag,"viewed"] = df.at[hashtag,"viewed"] + 1
             print(df.at[hashtag,"viewed"])
-            like = random.randrange(0,2)    #TODO: must be changed when I add the apis to the code 
-            print(like)
-            if like == 1:
+            
+            if like == True:
                 df.at[hashtag,"liked"] = df.at[hashtag,"liked"] + 1
 
             if random.randrange(0,4) == 3:
@@ -142,8 +161,13 @@ try:
             df.at[hashtag,"score"] = df.at[hashtag,"viewed"] + 10 * df.at[hashtag,"liked"] + 5 * df.at[hashtag,"comments"] + 10 * df.at[hashtag,"posted"]
         else:
             print(hashtag, " is not in csv")
+            
+            if like == True:
+                like_n = 1
+            else:
+                like_n = 0
 
-            new_row = {hashtag:[1,0,0,0,1+10*0+5*0+10*0]} #TODO: must be changed when I add the apis to the code 
+            new_row = {hashtag:[1,like_n,0,0,1+10*like_n+5*0+10*0]} #TODO: must be changed when I add the apis to the code 
             df_new_row = pd.DataFrame.from_dict(data=new_row,
                                                 orient='index',
                                                 columns=[
