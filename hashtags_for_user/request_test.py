@@ -27,12 +27,14 @@ for post in posts["posts"]:
     print()
     n += 1
 '''
-
-'''uri = "https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/users/all/type=json"
+uri = uribase + "/posts/all"
 
 responds_answer = requests.get(uri, headers={"Authorization": "KlingtGut"})
 
-print(responds_answer.json())'''
+print(responds_answer.json())
+print()
+print("----------------------------------------")
+print()
 
 
 
