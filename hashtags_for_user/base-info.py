@@ -1,0 +1,2 @@
+def baseuri():
+    return ''

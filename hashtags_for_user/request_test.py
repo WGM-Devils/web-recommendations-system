@@ -33,7 +33,7 @@ print(responds_answer.json())'''
 
 
 
-uri = "https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/posts/get/id=659ea34d10f8e1ccfa27ed8f/type=json"
+uri = "https://klingt-gut.cyclic.app/api/posts/get/id=659ea34d10f8e1ccfa27ed8f/type=json"
 
 responds_answer = requests.get(uri, headers={"Authorization": "KlingtGut"})
 
