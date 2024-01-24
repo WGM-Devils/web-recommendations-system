@@ -143,7 +143,7 @@ try:
         else:
             print(hashtag, " is not in csv")
 
-            new_row = {hashtag:[1,0,0,0,0,1+10*0+5*0+10*0]} #TODO: must be changed when I add the apis to the code 
+            new_row = {hashtag:[1,0,0,0,1+10*0+5*0+10*0]} #TODO: must be changed when I add the apis to the code 
             df_new_row = pd.DataFrame.from_dict(data=new_row,
                                                 orient='index',
                                                 columns=[
