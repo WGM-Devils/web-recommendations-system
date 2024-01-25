@@ -32,4 +32,5 @@ syntax:
 layout:
 ```
 ,viewed,liked,comments,posted,score
-test,0,0,0,0,0```
+test,0,0,0,0,0
+```
