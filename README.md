@@ -3,8 +3,8 @@
 ### command:
 
 syntax: 
-```
-python /location/to/file/hashtags_from_post.py userid postid
+```bash
+python /location/to/file/hashtags_from_post.py {userid} {postid}
 ```
 
 example: 
@@ -13,5 +13,23 @@ python hashtags_for_user/hashtags_from_post.py 65846334e4aa365544dd06af 65b111bd
 ```
 
 ### Output:
-#### File:
-**hashtags-65846334e4aa365544dd06af-.csv**
+#### Filename:
+syntax:
+```
+hashtags-{userid}-.csv
+```
+
+example:
+```
+hashtags-65846334e4aa365544dd06af-.csv
+```
+#### Filelayout:
+syntax:
+|`none`|viewed|liked|comments|posted|score|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|test|0|0|0|0|0|
+
+layout:
+```
+,viewed,liked,comments,posted,score
+test,0,0,0,0,0```
