@@ -79,7 +79,7 @@ test,0,0,0,0,0
 syntax:
 
 ```bash
-python /location/to/file/post_score.py 65846334e4aa365544dd06af 65b111bdd0ba272101646dad
+python /location/to/file/post_score.py {userid} {postid}
 ```
 
 example:
