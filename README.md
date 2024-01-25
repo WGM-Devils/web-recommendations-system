@@ -28,7 +28,7 @@ syntax:
 |`none`|viewed|liked|comments|posted|score|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |test|0|0|0|0|0|
-|{hashtag}|{a}|{b}|{c}|{d}|{$a + 10 * b + 5 * c + 10 * d$}
+|{hashtag}|{a}|{b}|{c}|{d}|{$`a + 10 * b + 5 * c + 10 * d`$}
 
 layout:
 ```
