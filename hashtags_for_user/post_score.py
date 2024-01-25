@@ -43,6 +43,14 @@ try:
         print("Post ID is not valid")
         exit()
 
+    
+    # get likes of post
+    post_likes = response_post_check["likes"]
+    post_likes = post_likes["count"]
+    print()
+    print(post_likes)
+    print()
+    
     userFile =  "hashtags-" + user + "-.csv"
     postScoreFile = "post-scores-" + user + "-.csv"
     if os.path.isfile(userFile):
@@ -112,20 +120,22 @@ try:
             post_score = post_score + 100
             
         c = c + 1
-
+    
     print(f'der Post Score ist: {post_score}')
     if c == 0:
         print("there are no hashtags in this post")
         exit()
+
+    post_score = post_score / c + post_likes * 10
     
-    print(f'der Post Score durch die Anzahl der Hashtags ist: {post_score / c}')
+    print(f'der Post Score durch die Anzahl der Hashtags ist: {post_score}')
 
     if post_id in df_post.index.to_list():
         print(post_id, 'is in csv')
-        df_post.at[post_id,"score"] = post_score / c
+        df_post.at[post_id,"score"] = post_score
     else:
         print(post_id, 'is not in csv')
-        new_row = {post_id:[False,post_score / c]}
+        new_row = {post_id:[False,post_score]}
         df_new_row = pd.DataFrame.from_dict(data=new_row,
                                             orient='index',
                                             columns=[
