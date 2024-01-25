@@ -113,18 +113,17 @@ syntax:
 
 layout:
 ```
-,viewed,liked,comments,posted,score
-test,0,0,0,0,0
+,viewed,score
+0,False,0.0
 ```
 
 
 example:
 
-|`none`|viewed|liked|comments|posted|score|
-|:---:|:---:|:---:|:---:|:---:|:---:|
-|test|0|0|0|0|0|
-|#musik|5|4|1|1|60|
-|#python|5|4|1|1|60|
+|`none`|viewed|score|
+|:---:|:---:|:---:|
+|0|False|0.0|
+|65b111bdd0ba272101646dad|False|70.0|
 
 
 
@@ -132,10 +131,9 @@ example:
 <summary>layout:</summary>
 
 ```
-,viewed,liked,comments,posted,score
-test,0,0,0,0,0
-#musik,5,4,1,1,60
-#python,5,4,1,1,60
+,viewed,score
+0,False,0.0
+65b111bdd0ba272101646dad,False,70.0
 ```
 
 </details>
