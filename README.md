@@ -42,23 +42,35 @@ hashtags-65846334e4aa365544dd06af-.csv
 
 </details>
 
-layout:
+<details>
+<summary>layout:</summary>
+
 ```
 ,viewed,liked,comments,posted,score
 test,0,0,0,0,0
 ```
 
-example:
+</details>
+
+<details>
+<summary>example:</summary>
+
 |`none`|viewed|liked|comments|posted|score|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |test|0|0|0|0|0|
 |#musik|5|4|1|1|60|
 |#python|5|4|1|1|60|
 
-layout:
+</details>
+
+<details>
+<summary>layout:</summary>
+
 ```
 ,viewed,liked,comments,posted,score
 test,0,0,0,0,0
 #musik,5,4,1,1,60
 #python,5,4,1,1,60
 ```
+
+</details>
