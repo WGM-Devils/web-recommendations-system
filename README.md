@@ -1,8 +1,17 @@
 # Recommendations System for KlingtGut
-## Get hastags from a seen post
+## Get hashtags from a seen post
 ### command:
 
+syntax: 
 ```
 python /location/to/file/hashtags_from_post.py userid postid
 ```
+
+example: 
+```bash
+python hashtags_for_user/hashtags_from_post.py 65846334e4aa365544dd06af 65b111bdd0ba272101646dad
+```
+
+### Output:
+File:
 
