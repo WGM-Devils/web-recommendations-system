@@ -22,7 +22,7 @@
 > [!NOTE]
 > you only need to install pip than you can run the following command to install the libraries
 > ```bash
-> python ./hashtags_for_user/base_info.py
+> $ python ./hashtags_for_user/base_info.py
 > ```
 > this will install all the required libraries
 
@@ -43,13 +43,13 @@
 syntax:
 
 ```bash
-python /location/to/file/hashtags_from_post.py {userid} {postid}
+$ python /location/to/file/hashtags_from_post.py {userid} {postid}
 ```
 
 example:
 
 ```bash
-python hashtags_for_user/hashtags_from_post.py 65846334e4aa365544dd06af 65b111bdd0ba272101646dad
+$ python hashtags_for_user/hashtags_from_post.py 65846334e4aa365544dd06af 65b111bdd0ba272101646dad
 ```
 
 ### Output:
@@ -111,13 +111,13 @@ test,0,0,0,0,0
 syntax:
 
 ```bash
-python /location/to/file/post_score.py {userid} {postid}
+$ python /location/to/file/post_score.py {userid} {postid}
 ```
 
 example:
 
 ```bash
-python hashtags_for_user/post_score.py 65846334e4aa365544dd06af 65b111bdd0ba272101646dad
+$ python hashtags_for_user/post_score.py 65846334e4aa365544dd06af 65b111bdd0ba272101646dad
 ```
 
 ### Output:
