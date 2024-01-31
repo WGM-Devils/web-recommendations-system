@@ -1,6 +1,7 @@
 # Recommendations System for KlingtGut
 
 ## Contents:
+
 * [Get hashtags from a seen post](#get-hashtags-from-a-seen-post)
 * [Score post based on hashtags for user](#score-post-based-on-hashtags-for-user)
 
@@ -20,7 +21,7 @@
 
 > [!NOTE]
 > you only need to install pip than you can run the following command to install the libraries
-> ```bash
+> ```batch
 > python ./hashtags_for_user/base_info.py
 > ```
 > this will install all the required libraries
@@ -41,13 +42,13 @@
 
 syntax:
 
-```bash
+```batch
 python /location/to/file/hashtags_from_post.py {userid} {postid}
 ```
 
 example:
 
-```bash
+```batch
 python hashtags_for_user/hashtags_from_post.py 65846334e4aa365544dd06af 65b111bdd0ba272101646dad
 ```
 
@@ -109,13 +110,13 @@ test,0,0,0,0,0
 
 syntax:
 
-```bash
+```batch
 python /location/to/file/post_score.py {userid} {postid}
 ```
 
 example:
 
-```bash
+```batch
 python hashtags_for_user/post_score.py 65846334e4aa365544dd06af 65b111bdd0ba272101646dad
 ```
 
