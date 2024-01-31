@@ -126,7 +126,7 @@ $ python hashtags_for_user/post_score.py 65846334e4aa365544dd06af 65b111bdd0ba27
 
 syntax:
 
-```51
+```csv
 post-scores-{userid}-.csv
 ```
 
@@ -147,7 +147,7 @@ syntax:
 
 layout:
 
-```csv
+```303
 ,viewed,score
 0,False,0.0
 ```
