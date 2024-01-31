@@ -4,6 +4,22 @@
 * [Get hashtags from a seen post](#get-hashtags-from-a-seen-post)
 * [Score post based on hashtags for user](#score-post-based-on-hashtags-for-user)
 
+## Setup:
+### Requirements:
+* python 3.11
+* pip
+#### Libraries:
+> [!NOTE]
+> you only need to install pip than you can run the following command to install the libraries
+> ```bash
+> python ./hashtags_for_user/base_info.py
+> ```
+> this will install all the required libraries
+* requests
+* pandas
+* numpy
+* python-dateutil
+
 
 ## Get hashtags from a seen post
 ### command:
