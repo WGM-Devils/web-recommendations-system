@@ -4,6 +4,9 @@ from pandas import *
 import sys
 import requests
 import base_info as bi
+import datetime
+import dateutil.parser
+import random
 
 n = len(sys.argv)
 try:
@@ -36,6 +39,8 @@ try:
             response_post_check = response_post_check["response"]
             response_post_check = response_post_check["contents"]
             post = response_post_check["content"]
+            time_post = response_post_check["createdAt"]
+            time_post = dateutil.parser.parse(time_post)
         else:
             print("Post ID is not valid")
             exit()
@@ -126,7 +131,12 @@ try:
         print("there are no hashtags in this post")
         exit()
 
-    post_score = post_score / c + post_likes * 10
+    time_now = datetime.datetime.now(datetime.timezone.utc)
+    # get time between post and now in hours and every thing under 1 hour is a float number
+    time_between_post_and_now = time_now - time_post
+    
+    post_score = post_score / c + (post_likes * 10) / (time_between_post_and_now.total_seconds() / 3600) + random.randint(0, 50)
+
     
     print(f'der Post Score durch die Anzahl der Hashtags ist: {post_score}')
 
