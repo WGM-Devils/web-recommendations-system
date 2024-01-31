@@ -57,15 +57,16 @@ python hashtags_for_user/hashtags_from_post.py 65846334e4aa365544dd06af 65b111bd
 
 syntax:
 
-```CSV
+```csv
 hashtags-{userid}-.csv
 ```
 
 example:
 
-```
+```csv
 hashtags-65846334e4aa365544dd06af-.csv
 ```
+
 #### Filelayout:
 
 syntax:
@@ -75,13 +76,12 @@ syntax:
 |test|0|0|0|0|0|
 |{hashtag}|{a}|{b}|{c}|{d}|{$`a + 10 * b + 5 * c + 10 * d`$}|
 
-
 layout:
-```
+
+```csv
 ,viewed,liked,comments,posted,score
 test,0,0,0,0,0
 ```
-
 
 example:
 
@@ -91,12 +91,10 @@ example:
 |#musik|5|4|1|1|60|
 |#python|5|4|1|1|60|
 
-
-
 <details>
 <summary>layout:</summary>
 
-```
+```csv
 ,viewed,liked,comments,posted,score
 test,0,0,0,0,0
 #musik,5,4,1,1,60
@@ -106,6 +104,7 @@ test,0,0,0,0,0
 </details>
 
 ## Score post based on hashtags for user
+
 ### command:
 
 syntax:
@@ -121,15 +120,18 @@ python hashtags_for_user/post_score.py 65846334e4aa365544dd06af 65b111bdd0ba2721
 ```
 
 ### Output:
+
 #### Filename:
 
 syntax:
-```
+
+```csv
 post-scores-{userid}-.csv
 ```
 
 example:
-```
+
+```csv
 post-scores-65846334e4aa365544dd06af-.csv
 ```
 
@@ -142,13 +144,12 @@ syntax:
 |0|False|0.0|
 |{postid}|{boolean}|{$`postscore / nhashtags + likes * 10`$}|
 
-
 layout:
-```
+
+```csv
 ,viewed,score
 0,False,0.0
 ```
-
 
 example:
 
@@ -157,12 +158,10 @@ example:
 |0|False|0.0|
 |65b111bdd0ba272101646dad|False|70.0|
 
-
-
 <details>
 <summary>layout:</summary>
 
-```
+```csv
 ,viewed,score
 0,False,0.0
 65b111bdd0ba272101646dad,False,70.0
