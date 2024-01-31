@@ -9,16 +9,16 @@
 * python 3.11
 * pip
 #### Libraries:
+* requests
+* pandas
+* numpy
+* python-dateutil
 > [!NOTE]
 > you only need to install pip than you can run the following command to install the libraries
 > ```bash
 > python ./hashtags_for_user/base_info.py
 > ```
 > this will install all the required libraries
-* requests
-* pandas
-* numpy
-* python-dateutil
 
 #### Files:
 * base_info.py
