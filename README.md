@@ -147,7 +147,7 @@ syntax:
 
 layout:
 
-```303
+```csv
 ,viewed,score
 0,False,0.0
 ```
