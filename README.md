@@ -5,14 +5,19 @@
 * [Score post based on hashtags for user](#score-post-based-on-hashtags-for-user)
 
 ## Setup:
+
 ### Requirements:
+
 * python 3.11
 * pip
+
 #### Libraries:
+
 * requests
 * pandas
 * numpy
 * python-dateutil
+
 > [!NOTE]
 > you only need to install pip than you can run the following command to install the libraries
 > ```bash
@@ -21,14 +26,17 @@
 > this will install all the required libraries
 
 #### Files:
+
 * base_info.py
 * hashtags_from_post.py
 * post_score.py
+
 > [!WARNING]
 > you need to have all the files in the same folder named hashtags_for_user
 
 
 ## Get hashtags from a seen post
+
 ### command:
 
 syntax:
@@ -37,23 +45,24 @@ syntax:
 python /location/to/file/hashtags_from_post.py {userid} {postid}
 ```
 
-
-
 example:
 
 ```bash
 python hashtags_for_user/hashtags_from_post.py 65846334e4aa365544dd06af 65b111bdd0ba272101646dad
 ```
 
-
 ### Output:
+
 #### Filename:
+
 syntax:
-```
+
+```CSV
 hashtags-{userid}-.csv
 ```
 
 example:
+
 ```
 hashtags-65846334e4aa365544dd06af-.csv
 ```
