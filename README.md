@@ -20,6 +20,13 @@
 * numpy
 * python-dateutil
 
+#### Files:
+* base_info.py
+* hashtags_from_post.py
+* post_score.py
+> [!WARNING]
+> you need to have all the files in the same folder named hashtags_for_user
+
 
 ## Get hashtags from a seen post
 ### command:
