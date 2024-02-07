@@ -2,25 +2,22 @@
 
 ## Contents:
 
-<summary>* [Setup](#setup)
-  * [Requirements](#requirements)</summary>
+* [Setup](#setup)
+  * [Requirements](#requirements)
     * [Libraries](#libraries)
     * [Files](#files)
 
-<summary>* [Get hashtags from a seen post](#get-hashtags-from-a-seen-post)</summary>
+* [Get hashtags from a seen post](#get-hashtags-from-a-seen-post)
     * [command](#command)
     * [Output](#output)
         * [Filename](#filename)
         * [Filelayout](#filelayout)
 
-<details>
-<summary>* [Score post based on hashtags for user](#score-post-based-on-hashtags-for-user)</summary>
+* [Score post based on hashtags for user](#score-post-based-on-hashtags-for-user)
     * [command](#command-1)
     * [Output](#output-1)
         * [Filename](#filename-1)
         * [Filelayout](#filelayout-1)
-
-</details>
 
 ## Setup:
 
