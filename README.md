@@ -2,8 +2,25 @@
 
 ## Contents:
 
-* [Get hashtags from a seen post](#get-hashtags-from-a-seen-post)
-* [Score post based on hashtags for user](#score-post-based-on-hashtags-for-user)
+<summary>* [Setup](#setup)
+  * [Requirements](#requirements)</summary>
+    * [Libraries](#libraries)
+    * [Files](#files)
+
+<summary>* [Get hashtags from a seen post](#get-hashtags-from-a-seen-post)</summary>
+    * [command](#command)
+    * [Output](#output)
+        * [Filename](#filename)
+        * [Filelayout](#filelayout)
+
+<details>
+<summary>* [Score post based on hashtags for user](#score-post-based-on-hashtags-for-user)</summary>
+    * [command](#command-1)
+    * [Output](#output-1)
+        * [Filename](#filename-1)
+        * [Filelayout](#filelayout-1)
+
+</details>
 
 ## Setup:
 
