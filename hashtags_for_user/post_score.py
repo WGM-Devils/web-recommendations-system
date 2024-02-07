@@ -1,12 +1,32 @@
+"""
+This script calculates the score for a given post based on the hashtags used in the post, the number of likes the post has received, and the time elapsed since the post was created.
+
+The script takes two command-line arguments: User ID and Post ID. It retrieves information about the user and post from an API and performs the following steps:
+
+1. Checks if the User ID and Post ID are valid.
+2. Reads the user's hashtag data from a CSV file.
+3. Reads the post score data from a CSV file.
+4. Extracts hashtags from the post content.
+5. Calculates the score for each hashtag based on the user's hashtag data.
+6. Calculates the overall post score by combining the hashtag scores, number of likes, and time elapsed since the post was created.
+7. Updates the post score data in the CSV file.
+
+Note: This script assumes the existence of the following files:
+- "hashtags-{user_id}.csv": Contains the user's hashtag data.
+- "post-scores-{user_id}.csv": Contains the post score data.
+
+Usage: python post_score.py <user_id> <post_id>
+"""
+
 import pandas as pd
 import os.path
-from pandas import *
 import sys
 import requests
 import base_info as bi
 import datetime
 import dateutil.parser
 import random
+
 
 n = len(sys.argv)
 try:
