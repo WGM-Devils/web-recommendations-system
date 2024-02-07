@@ -2,35 +2,50 @@ import os
 import sys
 
 def baseuri():
+    """
+    Returns the base URI for the API.
+
+    Returns:
+        str: The base URI for the API.
+    """
     return 'https://klingt-gut.onrender.com/api'
 
-# download all needed libarys using pip
 def setup_libarys():
-    sys.stdout.write("Downloading libarys...")
+    """
+    Downloads and installs the required libraries using pip.
+    """
+    sys.stdout.write("Downloading libraries...")
     os.system('pip install requests')
     os.system('pip install pandas')
     os.system('pip install python-dateutil')
     os.system('pip install numpy')
     sys.stdout.write("Done\n")
 
-# check if all needed libarys are installed
 def check_libarys():
+    """
+    Checks if all the required libraries are installed.
+    If any library is missing, it installs them using the `setup_libarys` function.
+    """
     try:
         import requests
         import pandas as pd
         import dateutil
         import numpy
     except ImportError:
-        print("Please install all needed libarys")
+        print("Please install all required libraries")
         setup_libarys()
 
-# check if all needed files are present
 def check_files():
-    # files to check:
-    # hashtags_for_user/base_info.py
-    # hashtags_for_user/hashtags_from_post.py
-    # hashtags_for_user/post_score.py
-    
+    """
+    Check if the required files exist in the specified directory.
+
+    This function checks for the existence of the following files:
+    - base_info.py
+    - hashtags_from_post.py
+    - post_score.py
+
+    If any of these files are missing, the function prints an error message and exits the program.
+    """
     if os.path.isfile("./hashtags_for_user/base_info.py"):
         pass
     else:
@@ -47,8 +62,11 @@ def check_files():
         print("File 'post_score.py' is missing")
         exit()
 
-# main function
 def main():
+    """
+    The entry point of the program.
+    It checks the libraries, files, and prints a setup complete message.
+    """
     check_libarys()
     check_files()
     print("Setup complete")

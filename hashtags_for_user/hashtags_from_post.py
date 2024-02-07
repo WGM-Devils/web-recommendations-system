@@ -1,14 +1,24 @@
 """
 This script extracts hashtags from a given post and updates a CSV file with the hashtag statistics.
+
+The script takes two command-line arguments: User ID and Post ID. It verifies the validity of the User ID and Post ID by making API requests. If the IDs are valid, it retrieves the post content and extracts hashtags from it. It then updates a CSV file with the hashtag statistics, including the number of times each hashtag has been viewed, liked, commented on, and posted.
+
+The script uses the following external libraries:
+- pandas: for reading and writing CSV files
+- os.path: for checking if a file exists
+- random: for generating random numbers
+- requests: for making API requests
+
+Usage: python hashtags_from_post.py <User ID> <Post ID>
 """
 
 import pandas as pd
 import os.path
 import random
-from pandas import *
 import sys
 import requests
 import base_info as bi
+
 
 n = len(sys.argv)
 
