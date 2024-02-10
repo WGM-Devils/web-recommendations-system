@@ -40,5 +40,5 @@ def get_user_likes():
 
 # Uncomment the functions below to use them
 
-# get_all_posts()
+get_all_posts()
 # get_user_likes()
